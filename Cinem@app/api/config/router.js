@@ -4,7 +4,7 @@ var router   = express.Router();
 
 //require controllers
 var usersController = require('../controllers/usersController');
-var postsController = require('../controllers/cinemasController');
+var cinemasController = require('../controllers/cinemasController');
 
 //authentication routes
 // router.post('/signin', usersController.signin);
