@@ -22,12 +22,13 @@ function CinemasController(Cinema){
   function showCinema(cinema){
     $("form#new-cinema").slideUp();
     $("form#edit-cinema").slideUp();
-    $("form#new-project").slideUp();
+    $("form#new-movie").slideUp();
     $('#cinemas').slideUp();
+    console.log("cinema")
 
     self.cinema = Cinema.get({id: cinema._id}, function(data){
       $('#show').slideDown();
-      $('#projects').slideDown();
+      $('#movies').slideDown();
     });
   }
 
@@ -40,6 +41,7 @@ function CinemasController(Cinema){
       })
       self.editcinema = {}
       toggleEditForm();
+      console.log("cinema")
     });
   }
 
@@ -48,6 +50,7 @@ function CinemasController(Cinema){
       self.cinemas.push(cinema);
       self.cinema = {};
       toggleNewForm();
+      console.log("cinema")
     });
   }
 
@@ -55,21 +58,24 @@ function CinemasController(Cinema){
     Cinema.delete({id: cinema._id});
     var index = self.cinemas.indexOf(cinema);
     self.cinemas.splice(index, 1);
+    console.log("cinema")
   }
 
   function editCinema(cinema){
-    self.editcinema = angular.copy(cinema);
+    self.editCinema = angular.copy(cinema);
     $("form#new-cinema").slideUp();
-    $("form#new-project").slideUp();
+    $("form#new-movie").slideUp();
     toggleEditForm();
+    console.log("yes")
   }
 
   function toggleShowCinemas(){
     $("#show").slideUp("slow");
-    $("#projects").slideUp("slow");
+    $("#movies").slideUp("slow");
     $("form#new-cinema").slideUp();
     $("form#edit-cinema").slideUp();
-    $("form#new-project").slideUp();
+    $("form#new-movie").slideUp();
+    console.log("yes")
 
     setTimeout(function(){
       self.cinema = {};
@@ -79,14 +85,16 @@ function CinemasController(Cinema){
 
   function toggleNewForm(){
     $("form#edit-cinema").slideUp();
-    $("form#new-project").slideUp();
+    $("form#new-movie").slideUp();
     $("form#new-cinema").slideToggle("slow");
+    console.log("yes")
   }
 
   function toggleEditForm(){
     $("form#new-cinema").slideUp();
-    $("form#new-project").slideUp();
+    $("form#new-movie").slideUp();
     $("form#edit-cinema").slideToggle("slow");
+    console.log("yes")
   }
 
 }
