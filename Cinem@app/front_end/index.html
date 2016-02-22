@@ -34,12 +34,6 @@
     </nav>
   </header>
 
-<div class="container-fluid">
-<div class="row">
-  <div class="col-xs-12 col-md-6 col-lg-4">.col-md-4</div>
-  <div class="col-xs-12 col-md-6 col-lg-4">.col-md-4</div>
-  <div class="col-xs-12 col-md-6 col-lg-4">.col-md-4</div>
-</div>
 <main ng-controller="MoviesController as movies">
     <form id="new-cinema" ng-submit="cinemas.updateCinema(cinemas.cinema)">
       <input ng-model="cinemas.cinema.name" type="text" name='name' id="name" placeholder="Name">
@@ -50,6 +44,19 @@
       <input ng-model="cinemas.cinema.website" type="text" name='website' id="website" placeholder="Website">
       <input type="submit" value='Save' id="submit">
     </form>
+    <div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-lg-4">
+  	<div id="cinemas" ng-repeat='cinema in cinemas.cinemas'>
+        <img ng-src='{{cinema.image}}'>
+        <h2>{{ cinema.name}}</h2>
+        <p>{{ cinema.description }}</p>
+        <a href='https://github.com/{{user.github}}'>Github</a> | <a href='{{cinema.portfolio}}'>Portfolio</a>
+        <br><a ng-click="cinemas.removeCinema(cinema)" class='delete' href='#'>Delete</a> | <a ng-click="cinemas.showCinema(cinema);" class='show' href='#'>Show</a> | <a ng-click="cinemas.editCinema(cinema)" href='#' class='edit'>Edit</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 </main>
 </div>
