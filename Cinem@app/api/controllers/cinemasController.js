@@ -26,7 +26,7 @@ function cinemasShow(req, res){
 
 function cinemasUpdate(req, res){
   var id = req.params.id;
-
+  console.log("update" , req.body);
   Cinema.findByIdAndUpdate({ _id: id }, req.body.cinema, {new:true}, function(err, cinema){
     if (err) return res.status(500).send(err);
     if (!cinema) return res.status(404).send(err);

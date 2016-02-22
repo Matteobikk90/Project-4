@@ -35,7 +35,7 @@ function moviesShow(req, res){
 function moviesUpdate(req, res){
   var id = req.params.id;
 
-  Movie.findByIdAndUpdate({ _id: id }, req.body.movie, function(err, movie){
+  Movie.findByIdAndUpdate({ _id: id }, req.body.movie, {new:true}, function(err, movie){
     if (err) return res.status(500).send(err);
     if (!movie) return res.status(404).send(err);
     res.status(200).send(movie);

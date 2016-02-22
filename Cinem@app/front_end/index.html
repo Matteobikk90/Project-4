@@ -34,6 +34,12 @@
     </nav>
   </header>
 
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-lg-4">.col-md-4</div>
+  <div class="col-xs-12 col-md-6 col-lg-4">.col-md-4</div>
+  <div class="col-xs-12 col-md-6 col-lg-4">.col-md-4</div>
+</div>
 <main ng-controller="MoviesController as movies">
     <form id="new-cinema" ng-submit="cinemas.updateCinema(cinemas.cinema)">
       <input ng-model="cinemas.cinema.name" type="text" name='name' id="name" placeholder="Name">
@@ -46,6 +52,6 @@
     </form>
 
 </main>
-
+</div>
 </body>
 </html>
