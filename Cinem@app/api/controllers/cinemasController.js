@@ -1,68 +1,51 @@
-var Cinema = require('../models/Cinema');
+var Cinema = require("../models/cinema");
 
-// GET
-function getAll(request, response) {
-  Cinema.find(function(error, cinemas) {
-    if(error) response.json({message: 'Could not find any cinema'});
-
-    response.json({cinemas: cinemas});
-  }).select('-__v');
-}
-
-// POST
-function createCinema(request, response) {
-  var cinema = new Cinema(request.body);
-
-  cinema.save(function(error) {
-    if(error) response.json({messsage: 'Could not ceate cinema' + error});
-
-    response.json({cinema: cinema});
+function cinemasIndex(req, res){
+  Cinema.find({}, function(err, cinemas) {
+    if (err) return res.status(404).send(err);
+    res.status(200).send(cinemas);
   });
 }
 
-// GET
-function getCinema(request, response) {
-  var id = request.params.id;
-
-  Cinema.findById({_id: id}, function(error, cinema) {
-    if(error) response.json({message: 'Could not find cinema' + error});
-
-    response.json({cinema: cinema});
-  }).select('-__v');
+function cinemasCreate(req, res){
+  var cinema = new Cinema(req.body.cinema);
+  cinema.save(function(err, cinema) {
+    if (err) return res.status(500).send(err);
+    res.status(201).send(cinema);
+  });
 }
 
-function updateCinema(request, response) {
-  var id = request.params.id;
-
-  Cinema.findById({_id: id}, function(error, cinema) {
-    if(error) response.json({message: 'Could not find cinema' + error});
-
-    if(request.body.name) cinema.name = request.body.name;
-    if(request.body.location) cinema.start = request.body.location;
-    if(request.body.status) cinema.end = request.body.status;
-
-    cinema.save(function(error) {
-      if(error) response.json({messsage: 'Could not update cinema' + error});
-
-      response.json({message: 'Cinema successfully updated', cinema: cinema});
-    });
-  }).select('-__v');
+function cinemasShow(req, res){
+  var id = req.params.id;
+  Cinema.findById({ _id: id }).populate("movies").exec(function(err, cinema) {
+    if (err) return res.status(500).send(err);
+    if (!cinema) return res.status(404).send(err);
+    res.status(200).send(cinema);
+  });
 }
 
-function removeCinema(request, response) {
-  var id = request.params.id;
+function cinemasUpdate(req, res){
+  var id = req.params.id;
 
-  Cinema.remove({_id: id}, function(error) {
-    if(error) response.json({message: 'Could not delete cinema' + error});
+  Cinema.findByIdAndUpdate({ _id: id }, req.body.cinema, {new:true}, function(err, cinema){
+    if (err) return res.status(500).send(err);
+    if (!cinema) return res.status(404).send(err);
+    res.status(200).send(cinema);
+  });
+}
 
-    response.json({message: 'Cinema successfully deleted'});
-  }).select('-__v');
+function cinemasDelete(req, res){
+  var id = req.params.id;
+  Cinema.remove({ _id: id }, function(err) {
+    if (err) return res.status(500).send(err);
+    res.status(200).send();
+  });
 }
 
 module.exports = {
-  getAll: getAll,
-  createCinema: createCinema,
-  getCinema: getCinema,
-  updateCinema: updateCinema,
-  removeCinema: removeCinema
-}
+  cinemasIndex:  cinemasIndex,
+  cinemasCreate: cinemasCreate,
+  cinemasShow:   cinemasShow,
+  cinemasUpdate: cinemasUpdate,
+  cinemasDelete: cinemasDelete
+};
