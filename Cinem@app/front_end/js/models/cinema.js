@@ -6,7 +6,7 @@ Cinema.$inject = ['$resource', 'API'];
 function Cinema($resource, API){
 
   return $resource(
-    API+'/users/:id',
+    API+'/cinemas/:id',
     {id: '@_id'},
     { 'get':    { method: 'GET' },
       'save':   { method: 'POST' },
