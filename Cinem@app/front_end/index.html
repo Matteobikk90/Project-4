@@ -27,13 +27,25 @@
         <li ng-click="cinemas.toggleNewForm()">
           <a id="cinema-form-button" href="#">Add Cinema</a>
         </li>
-        <li ng-click="cinemas.toggleShowUsers()">
+        <li ng-click="cinemas.toggleShowCinemas()">
           <a id="cinema-index-button" href="#">All Cinemas</a>
         </li>
       </ul>
     </nav>
   </header>
 
+<main ng-controller="MoviesController as movies">
+    <form id="new-cinema" ng-submit="cinemas.updateCinema(cinemas.cinema)">
+      <input ng-model="cinemas.cinema.name" type="text" name='name' id="name" placeholder="Name">
+      <input ng-model="cinemas.cinema.address" type="text" name='address' id="address" placeholder="Address">
+      <input ng-model="cinemas.cinema.phone" type="text" name='phone' id="phone" placeholder="Phone">
+      <input ng-model="cinemas.cinema.image" type="text" name='image' id="image" placeholder="Image">
+      <input ng-model="cinemas.cinema.description" type="text" name='description' id="description" placeholder="Description">
+      <input ng-model="cinemas.cinema.website" type="text" name='website' id="website" placeholder="Website">
+      <input type="submit" value='Save' id="submit">
+    </form>
+
+</main>
 
 </body>
 </html>
