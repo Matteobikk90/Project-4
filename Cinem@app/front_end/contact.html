@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Contact</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/contact.css">
 </head>
 <body ng-controller="CinemasController as cinemas">
@@ -17,27 +18,26 @@
         <li>
           <a href="contact.html" id="contact">Contact</a>
         </li>
-  </header>
       </ul>
     </nav>
+  </header>
 
-    <div class="container">
-       <div class="row">
-         <div class="col-md-4">
-               <div class="info">
-                 <div class="img-container">
-                   <img src="./images/matteo.jpg" class="photo" alt=""/>
-                   <div class="info-container">
-                     <div class="to-bottom">
-                       <h6>Contact<br/>Matteo Soresini</h6>
-                       <p><a href="mailto:address@addresss.com">matteo.soresini@hotmail.it</a></p>
-                     </div>
-                   </div>
-                 </div>
-                 <h5>Matteo Soresini</h5>
-             </div>
-           </div>
-         </div>
+  <div class="container">
+    <div class="row contact-padding">
+      <!-- <div class="col-md-12"> -->
+        <div class="img-container col-md-3">
+          <img class="contact-img" src="./images/matteo.jpg" class="photo" alt=""/>
+        </div> 
+              
+        <div class="info-container col-md-9">
+          <h3>Matteo Soresini</h3>
+          <p><a id="email" href="mailto:address@addresss.com">matteo.soresini@hotmail.it</a></p>
+          <p><a id="linkedin" href="https://it.linkedin.com/in/matteosoresini90">https://it.linkedin.com/in/matteosoresini90</a></p>
+          <p><a id="github" href="https://github.com/Matteobikk90">https://github.com/Matteobikk90</a></p>
+        </div>         
+      <!-- </div> -->
     </div>
+  </div>
+
 </body>
 </html>
