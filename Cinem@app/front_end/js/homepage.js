@@ -1,4 +1,4 @@
 // $(document).ready(function() {
-//     $("#infor").delay(5000).fadeOut("slow");
+//     $("#infor").delay(14000).fadeOut("slow", null);
 //     console.log("hello")
 // });
