@@ -9,6 +9,7 @@ function CinemasController(Cinema){
 
   self.cinemas           = Cinema.query();
   self.cinema            = {};
+  self.createCinema      = createCinema;
   self.showCinema        = showCinema;
   self.editCinema        = {}
   self.updateCinema      = updateCinema;
@@ -39,13 +40,13 @@ function CinemasController(Cinema){
           array[index] = response;
         };
       })
-      self.editcinema = {}
+      self.editCinema = {}
       toggleEditForm();
-      console.log("cinema")
+      console.log("yes")
     });
   }
 
-  function createcinema(){
+  function createCinema(){
     Cinema.save({ cinema: self.cinema }, function(cinema) {
       self.cinemas.push(cinema);
       self.cinema = {};

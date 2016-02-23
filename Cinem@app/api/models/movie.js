@@ -5,8 +5,8 @@ var movieSchema = mongoose.Schema({
   description: String,
   actor: String,
   year: Number,
+  image: String,
   website: String,
-  cinemas: [{ type: mongoose.Schema.ObjectId, ref: 'Cinema' }]
 });
 
 module.exports = mongoose.model('Movie', movieSchema);

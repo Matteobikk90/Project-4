@@ -1,22 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html ng-app="Cinem@pp">
 <head>
-
-	<title>Cinem@pp</title>
-
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/style.css
-	">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.js"></script>
-
-    <script src="./js/app.js"></script>
-    <script src="./js/models/cinema.js"></script>
-    <script src="./js/models/movie.js"></script>
-    <script src="./js/controllers/cinemasController.js"></script>
-    <script src="./js/controllers/moviesController.js"></script>
-
+  <title>Cinem@pp</title>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.js"></script>
+  
+  <script src="./js/app.js"></script>
+  <script src="./js/models/cinema.js"></script>
+  <script src="./js/models/movie.js"></script>
+  <script src="./js/controllers/cinemasController.js"></script>
+  <script src="./js/controllers/moviesController.js"></script>
 </head>
 
 <body ng-controller="CinemasController as cinemas">
@@ -26,25 +21,27 @@
         <li ng-click="cinemas.toggleShowCinemas()">
           <a href="#">Cinem@pp</a>
         </li>
-        <li ng-click="cinemas.toggleNewForm()">
-          <a id="cinema-form-button" href="#">Add Cinema</a>
-        </li>
         <li ng-click="cinemas.toggleShowCinemas()">
           <a id="cinema-index-button" href="#">All Cinemas</a>
         </li>
-        </header>
+        <li>
+          <a href="turin.html" id="turin" href="">Turin Cinema Musuem</a>
+        </li>
+        <li>
+          <a href="contact.html" id="contact" href="">Contact</a>
+        </li>
+  </header>
       </ul>
     </nav>
-  
 
-<main ng-controller="MoviesController as movies">
-    <form id="new-cinema" ng-submit="cinemas.updateCinema(cinemas.cinema)">
+  <main ng-controller="MoviesController as movies">
+    <form id="new-cinema" ng-submit="cinemas.createCinema(cinemas.cinema)">
       <input ng-model="cinemas.cinema.name" type="text" name='name' id="name" placeholder="Name">
       <input ng-model="cinemas.cinema.address" type="text" name='address' id="address" placeholder="Address">
       <input ng-model="cinemas.cinema.phone" type="text" name='phone' id="phone" placeholder="Phone">
-      <input ng-model="cinemas.cinema.image" type="text" name='image' id="image" placeholder="Image">
+      <input ng-model="cinemas.cinema.image" type="text" name='image' id="image" placeholder="ImageURL">
       <input ng-model="cinemas.cinema.description" type="text" name='description' id="description" placeholder="Description">
-      <input ng-model="cinemas.cinema.website" type="text" name='website' id="website" placeholder="Website">
+      <input ng-model="cinemas.cinema.website" type="text" name='website' id="website" placeholder="website">
       <input type="submit" value='Save' id="submit">
     </form>
 
@@ -52,7 +49,7 @@
       <input type="text" name='edit-name' id="edit-name" ng-model="cinemas.editCinema.name" placeholder="Name">
       <input type="text" name='edit-address' id="edit-address" ng-model="cinemas.editCinema.address" placeholder="Address">
       <input type="text" name='edit-phone' id="edit-phone" ng-model="cinemas.editCinema.phone" placeholder="Phone">
-      <input type="text" name='edit-image' id="edit-image" ng-model="cinemas.editCinema.image" placeholder="Image URL">
+      <input type="text" name='edit-image' id="edit-image" ng-model="cinemas.editCinema.image" placeholder="ImageURL">
       <input type="text" name='edit-description' id="edit-description" ng-model="cinemas.editCinema.description" placeholder="Description">
       <input type="text" name='edit-website' id="edit-website" ng-model="cinemas.editCinema.website" placeholder="Website">
       <input type="submit" value='Save' id="submit">
@@ -63,49 +60,50 @@
       <input type="text" name='movie-description' id="movie-description" placeholder="Description" ng-model="movies.movie.description">
       <input type="text" name='movie-actor' id="movie-actor" placeholder="Actors" ng-model="movies.movie.actor">
       <input type="text" name='movie-year' id="movie-year" placeholder="Year" ng-model="movies.movie.year">
+      <input type="text" name='movie-image' id="movie-image" placeholder="ImageURL" ng-model="movies.movie.image">
       <input type="text" name='movie-website' id="movie-website" placeholder="Website" ng-model="movies.movie.website">
       <input type="submit" value='Save' id="submit">
     </form>
 
-<div id="cinemas">
-  	<div id="cinema-tile" ng-repeat='cinema in cinemas.cinemas'>
-        <h2>{{ cinema.name }}</h2>
+    <div id="cinemas">
+      <div class='cinema-tile' ng-repeat='cinema in cinemas.cinemas'>
+        <h2>{{ cinema.name}}</h2>
         <p>{{ cinema.address }}</p>
-        <a href="{{cinema.github}}">Website</a> | <p>{{ cinema.phone }}</p>
-        <img ng-src="{{cinema.image}}">
-        <br><a ng-click="cinemas.showCinema(cinema);" class="show" href="#">Show</a> | <a ng-click="cinemas.editCinema(cinema)" href="#" class="edit">Edit</a> | <a ng-click="cinemas.removeCinema(cinema)" class="delete" href="#">Delete</a>
-    </div>
-</div>
-
-<div id="show">
-      <div class='cinema-tile' data-id="{{cinemas.cinema._id}}">
-        <h2>{{ cinema.name }}</h2>
-        <p>{{ cinema.address }}</p>
-        <a href="{{cinema.website}}">Website</a> | <p>{{ cinema.phone }}</p>
-        <img ng-src="{{cinema.image}}">
+        <p>{{ cinema.phone }}</p>
+        <img ng-src='{{cinema.image}}'>
         <p>{{ cinema.description }}</p>
+        <a href='{{cinema.website}}'>{{cinema.website}}</a>
+        <br><a ng-click="cinemas.showCinema(cinema);" class='show' href='#'>Show</a> | <a ng-click="cinemas.editCinema(cinema)" href='#' class='edit'>Edit</a> | <a ng-click="cinemas.removeCinema(cinema)" class='delete' href='#'>Delete</a>
       </div>
-</div>
+    </div>
+  <div ng-click="cinemas.toggleNewForm()" class="cinema-tile">
+      <h3><a href="#">Add Cinema</a></h3>
+  </div>
 
-<div id="movies">
-      <ul>
-        <li ng-repeat="movie in cinemas.cinema.movies">
-          <div class='movie-tile'>
+   <!--  <div id="show">
+      <div class='cinema-tile' data-id="{{cinemas.cinema._id}}">
+         <h2>{{ cinema.name}}</h2>
+        <p>{{ cinema.address }}</p>
+        <p>{{ cinema.phone }}</p>
+        <img ng-src='{{cinema.image}}'>
+        <p>{{ cinema.description }}</p>
+        <a href='{{cinema.website}}'>{{cinema.website}}</a>
+      </div>
+    </div> -->
+
+    <div id="movies">
+        <div class='movie-tile' ng-repeat="movie in cinemas.cinema.movies">
             <h2>{{ movie.title }}</h2>
             <p>{{ movie.description }}</p>
             <p>{{ movie.actor }}</p>
             <p>{{ movie.year }}</p>
-            <p>{{ movie.website }}</p>
-            <a ng-click="movies.removeMovie(movie)" href="#">Delete</a>
-          </div>
-        </li>
-      </ul>
-      <div ng-click="movies.toggleAddMovie()" class='project-tile'>
-        <h2><a href='#'>Add a movie </a></h2>
-      </div>
+            <p>{{ movie.image }}</p>
+            <a href='{{movie.website}}'>Website</a> | <a ng-click="movies.removeMovie(movie)" href="#">Delete</a>
+        </div> 
+    <div ng-click="movies.toggleAddMovie()" class='movie-tile'>
+      <h3><a href='#'>Add a Movie</a></h3>
     </div>
-
-
-</main>
+    </div>
+  </main>
 </body>
 </html>

@@ -13,7 +13,10 @@ function moviesCreate(req, res){
   movie.save(function(err){
     if (err) return res.status(500).send(err);
     var id = req.body.movie._id;
-    Cinema.find({ id: id }, function(err, cinema){
+    Cinema.findOne({ id: id }, function(err, cinema){
+      if(err) next(err);
+      if(!cinema) res.status(404).send("not found");
+      console.log(cinema);
       cinema.movies.push(movie);
       cinema.save(function(err, cinema) {
         res.status(201).send(movie);
