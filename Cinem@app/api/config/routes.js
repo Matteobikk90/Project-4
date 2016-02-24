@@ -23,7 +23,6 @@ router.route('/movies')
 
 router.route('/movies/:id')
   .get(moviesController.moviesShow)
-  .put(moviesController.moviesUpdate)
   .patch(moviesController.moviesUpdate)
   .delete(moviesController.moviesDelete);
 

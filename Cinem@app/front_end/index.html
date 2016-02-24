@@ -16,7 +16,7 @@
   <script src="./js/controllers/moviesController.js"></script>
 </head>
 
-  <!-- <div class="header-videoContainer">
+<!--   <div class="header-videoContainer">
      <div class="video-container">
         <video preload="true" autoplay="autoplay" volume="0">
            <source src="video/video.mp4" type="video/mp4">
@@ -51,7 +51,7 @@
       <input ng-model="cinemas.cinema.phone" type="text" name='phone' id="phone" placeholder="Phone">
       <input ng-model="cinemas.cinema.image" type="text" name='image' id="image" placeholder="ImageURL">
       <input ng-model="cinemas.cinema.description" type="text" name='description' id="description" placeholder="Description">
-      <input ng-model="cinemas.cinema.website" type="text" name='website' id="website" placeholder="website">
+      <input ng-model="cinemas.cinema.website" type="text" name='website' id="website" placeholder="Website">
       <input type="submit" value='Save' id="submit">
     </form>
 
@@ -75,6 +75,10 @@
       <input type="submit" value='Save' id="submit">
     </form>
 
+<div ng-click="cinemas.toggleNewForm()" class="cinema-tile">
+      <h3><a href="#">Add Cinema</a></h3>
+  </div>
+
     <div id="cinemas">
       <div class="cinema-tile" ng-repeat='cinema in cinemas.cinemas'>
         <h2>{{ cinema.name}}</h2>
@@ -86,11 +90,8 @@
         <br><a ng-click="cinemas.showCinema(cinema);" class='show' href='#'>Show</a> | <a ng-click="cinemas.editCinema(cinema)" href='#' class='edit'>Edit</a> | <a ng-click="cinemas.removeCinema(cinema)" class='delete' href='#'>Delete</a>
       </div>
     </div>
-  <div ng-click="cinemas.toggleNewForm()" class="cinema-tile">
-      <h3><a href="#">Add Cinema</a></h3>
-  </div>
 
-   <!--  <div id="show">
+ <!--    <div id="show">
       <div class='cinema-tile' data-id="{{cinemas.cinema._id}}">
          <h2>{{ cinema.name}}</h2>
         <p>{{ cinema.address }}</p>
@@ -102,6 +103,9 @@
     </div> -->
 
     <div id="movies">
+      <div ng-click="movies.toggleAddMovie()" class='movie-tile'>
+      <h3><a href='#'>Add a Movie</a></h3>
+    </div>
         <div class='movie-tile' ng-repeat="movie in cinemas.cinema.movies">
             <h2>{{ movie.title }}</h2>
             <p>{{ movie.description }}</p>
@@ -110,9 +114,6 @@
             <p>{{ movie.image }}</p>
             <a href='{{movie.website}}'>Website</a> | <a ng-click="movies.removeMovie(movie)" href="#">Delete</a>
         </div> 
-    <div ng-click="movies.toggleAddMovie()" class='movie-tile'>
-      <h3><a href='#'>Add a Movie</a></h3>
-    </div>
     </div>
   </main>
 </body>

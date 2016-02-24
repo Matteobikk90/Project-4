@@ -42,7 +42,7 @@ function CinemasController(Cinema){
       })
       self.editCinema = {}
       toggleEditForm();
-      console.log("yes")
+      console.log("update")
     });
   }
 
@@ -51,7 +51,7 @@ function CinemasController(Cinema){
       self.cinemas.push(cinema);
       self.cinema = {};
       toggleNewForm();
-      console.log("cinema")
+      console.log("create")
     });
   }
 
@@ -59,7 +59,7 @@ function CinemasController(Cinema){
     Cinema.delete({id: cinema._id});
     var index = self.cinemas.indexOf(cinema);
     self.cinemas.splice(index, 1);
-    console.log("cinema")
+    console.log("delete")
   }
 
   function editCinema(cinema){
@@ -67,7 +67,7 @@ function CinemasController(Cinema){
     $("form#new-cinema").slideUp();
     $("form#new-movie").slideUp();
     toggleEditForm();
-    console.log("yes")
+    console.log("edit")
   }
 
   function toggleShowCinemas(){
