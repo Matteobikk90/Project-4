@@ -4,21 +4,21 @@ body {
 }
 
 h3 {
-  color: white;
+  color: firebrick;
 }
 
-#email, #linkedin, #github {
-  color: white;
+#email {
+  color: chocolate;
 }
 
-.contact-img {
-  width: 50%;
-  position: relative;
-  transform: translateX(-50%);
-  left: 50%;
+#linkedin{
+  color: cornflowerblue;
 }
 
+#github{
+  color:lavender;
 
+}
 main {
   width: 960px;
   margin: 30px auto;
@@ -127,14 +127,30 @@ header nav ul li a {
 }
 
 .container {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.3);
   margin: 0 auto;
 }
 
 .info-container {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 320px;
 }
 
 .contact-padding {
   padding: 2em;
+}
+
+.contact-img {
+  width: 86%;
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.img-container{
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#nameContact {
+  margin-left: 288px;
 }
