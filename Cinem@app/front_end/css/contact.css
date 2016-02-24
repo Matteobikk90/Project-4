@@ -1,5 +1,5 @@
 body {
-  font-family: helvetica;
+  font-family: 'Lobster', cursive;
   background-image: url("http://thumbs.dreamstime.com/x/contact-tag-cloud-details-customer-information-support-call-us-30832971.jpg");
 }
 
@@ -133,7 +133,7 @@ header nav ul li a {
 
 .info-container {
   background-color: rgba(0, 0, 0, 0.7);
-  height: 257px;
+  height: 321px;
 }
 
 .contact-padding {

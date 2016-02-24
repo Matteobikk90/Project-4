@@ -2,6 +2,7 @@
 <html ng-app="Cinem@pp">
 <head>
   <title>Cinem@pp</title>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -76,17 +77,13 @@
       <input type="submit" value='Save' id="submit">
     </form>
 
-    <div ng-click="cinemas.toggleNewForm()" class="cinema-tile">
-        <h3><a href="#">Add Cinema</a></h3>
-        <img id="icon" src="../images/cinema.png">
-    </div>
-
-    <div ng-click="movies.toggleAddMovie()" class='movie-tile'>
-        <h3><a href='#'>Add a Movie</a></h3>
-        <img id="icon" src="../images/film.png">
-    </div>
-
     <div id="cinemas">
+
+      <div ng-click="cinemas.toggleNewForm()" class="cinema-tile">
+        <h3><a href="#">Add Cinema</a></h3>
+        <!-- <img id="icon" src="../images/cinema.png"> -->
+      </div>
+
       <div class="cinema-tile col-md-4" ng-repeat='cinema in cinemas.cinemas'>
         <h2 ng-click="cinemas.showCinema(cinema);">{{ cinema.name}}</h2>
           <p>{{ cinema.address }}</p>
@@ -100,6 +97,12 @@
     </div>
 
     <div id="movies">  
+
+      <div ng-click="movies.toggleAddMovie()" class='movie-tile'>
+        <h3><a href='#'>Add a Movie</a></h3>
+        <!-- <img id="icon" src="../images/film.png"> -->
+      </div>
+      
         <div class='movie-tile col-md-12' ng-repeat="movie in cinemas.cinema.movies">
           <h2>{{ movie.title }}</h2>
           <p>{{ movie.description }}</p>
