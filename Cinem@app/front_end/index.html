@@ -102,10 +102,11 @@
       </div>
     </div> -->
 
-    <div id="movies">
-      <div ng-click="movies.toggleAddMovie()" class='movie-tile'>
+    <div ng-click="movies.toggleAddMovie()" class='movie-tile'>
       <h3><a href='#'>Add a Movie</a></h3>
     </div>
+
+    <div id="movies">  
         <div class='movie-tile' ng-repeat="movie in cinemas.cinema.movies">
             <h2>{{ movie.title }}</h2>
             <p>{{ movie.description }}</p>

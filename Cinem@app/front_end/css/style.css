@@ -163,6 +163,7 @@ header nav ul li a {
 .movie-tile img {
   width: 100%;
   height: 160px;
+  float: left;
 
 }
 

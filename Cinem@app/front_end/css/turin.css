@@ -1,6 +1,7 @@
 body {
   font-family: helvetica;
-  background-color: black;
+  background-image: url("../images/Turin.jpg");
+  background-size: cover;
 }
 
 main {
