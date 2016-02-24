@@ -84,16 +84,22 @@
         <!-- <img id="icon" src="../images/cinema.png"> -->
       </div>
 
-      <div class="cinema-tile col-md-4" ng-repeat='cinema in cinemas.cinemas'>
-        <h2 ng-click="cinemas.showCinema(cinema);">{{ cinema.name}}</h2>
-          <p>{{ cinema.address }}</p>
-          <p>{{ cinema.phone }}</p>
-          <img ng-src='{{cinema.image}}'>
-          <p>{{ cinema.description }}</p>
-          <a href='{{cinema.website}}'>{{cinema.website}}</a>
-          <br>
-          <a ng-click="cinemas.showCinema(cinema);" class='show' href='#'>Show</a> | <a ng-click="cinemas.editCinema(cinema)" href='#' class='edit'>Edit</a> | <a ng-click="cinemas.removeCinema(cinema)" class='delete' href='#'>Delete</a>
+      <div class="container-fluid">
+        <div class="col-md-4" ng-repeat='cinema in cinemas.cinemas'>
+          <div class="clearfix" ng-if="$index % 3 == 0"></div>
+          <div class="cinema-tile">
+            <h2 ng-click="cinemas.showCinema(cinema);">{{ cinema.name}}</h2>
+            <p>{{ cinema.address }}</p>
+            <p>{{ cinema.phone }}</p>
+            <img ng-src='{{cinema.image}}'>
+            <p>{{ cinema.description | limitTo: cinemas.descripLimit }}<span ng-if="cinema.description.length >= cinemas.descripLimit">...</span></p>
+            <a href='{{cinema.website}}'>{{cinema.website}}</a>
+            <br>
+            <a ng-click="cinemas.showCinema(cinema);" href='#'>Show</a> | <a ng-click="cinemas.editCinema(cinema)" href='#' class='edit'>Edit</a> | <a ng-click="cinemas.removeCinema(cinema)" class='delete' href='#'>Delete</a>
+          </div>
+        </div>
       </div>
+
     </div>
 
     <div id="movies">  

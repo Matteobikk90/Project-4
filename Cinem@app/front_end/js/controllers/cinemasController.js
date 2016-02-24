@@ -7,7 +7,9 @@ function CinemasController(Cinema){
 
   var self             = this;
 
-  self.cinemas           = Cinema.query();
+  self.cinemas           = Cinema.query(function(data) {
+    console.log(data)
+  });
   self.cinema            = {};
   self.createCinema      = createCinema;
   self.showCinema        = showCinema;
@@ -19,6 +21,8 @@ function CinemasController(Cinema){
   self.toggleEditForm  = toggleEditForm;
   self.toggleNewForm   = toggleNewForm;
   self.toggleShowCinemas = toggleShowCinemas;
+
+  self.descripLimit = 150;
 
   function showCinema(cinema){
     $("form#new-cinema").slideUp();
