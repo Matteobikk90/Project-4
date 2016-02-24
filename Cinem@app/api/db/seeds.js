@@ -11,6 +11,7 @@ var movie1 = new Movie({
   description: "The Lexi Cinema is a digital arthouse cinema, offering world cinema, mainstream films and retrospectives. All profits from the cinema support a sustainable living project in South Africa.",
   actors: "Ben Stiller, Monica Bellucci, George Clooney",
   year: "1998",
+  image:"http://www.studiocity-macau.com/uploads/images/SC/Entertainment/Batman/batman_share.jpg",
   website: "www.google.com"
 })
 
@@ -24,6 +25,7 @@ var movie2 = new Movie({
   description: "The Lexi Cinema is a digital arthouse cinema, offering world cinema, mainstream films and retrospectives. All profits from the cinema support a sustainable living project in South Africa.",
   actors: "Nicolas Cage, Martin Scorzese, Silverster Stallone",
   year: "2010",
+  image:"http://www.studiocity-macau.com/uploads/images/SC/Entertainment/Batman/batman_share.jpg",
   website: "www.google.com"
 })
 
@@ -37,6 +39,7 @@ var movie3 = new Movie({
   description: "The Lexi Cinema is a digital arthouse cinema, offering world cinema, mainstream films and retrospectives. All profits from the cinema support a sustainable living project in South Africa.",
   actors: "Nicolas Cage, Martin Scorzese, Silverster Stallone",
   year: "2009",
+  image:"http://www.studiocity-macau.com/uploads/images/SC/Entertainment/Batman/batman_share.jpg",
   website: "www.google.com"
 })
 
@@ -50,6 +53,7 @@ var movie4 = new Movie({
   description: "The Lexi Cinema is a digital arthouse cinema, offering world cinema, mainstream films and retrospectives. All profits from the cinema support a sustainable living project in South Africa.",
   actors: "Nicolas Cage, Martin Scorzese, Silverster Stallone",
   year: "2006",
+  image:"http://www.studiocity-macau.com/uploads/images/SC/Entertainment/Batman/batman_share.jpg",
   website: "www.google.com"
 })
 
@@ -58,80 +62,86 @@ movie4.save(function(err, movie) {
  console.log("Movie saved! ", movie);
 })
 
-var movie4 = new Movie({
+var movie5 = new Movie({
   title: "Scarface",
   description: "The Lexi Cinema is a digital arthouse cinema, offering world cinema, mainstream films and retrospectives. All profits from the cinema support a sustainable living project in South Africa.",
   actors: "Nicolas Cage, Martin Scorzese, Silverster Stallone",
   year: "2006",
+  image:"http://www.studiocity-macau.com/uploads/images/SC/Entertainment/Batman/batman_share.jpg",
   website: "www.google.com"
 })
 
-movie4.save(function(err, movie) {
+movie5.save(function(err, movie) {
  if (err) return console.log(err);
  console.log("Movie saved! ", movie);
 })
 
-var movie4 = new Movie({
+var movie6 = new Movie({
   title: "Scarface",
   description: "The Lexi Cinema is a digital arthouse cinema, offering world cinema, mainstream films and retrospectives. All profits from the cinema support a sustainable living project in South Africa.",
   actors: "Nicolas Cage, Martin Scorzese, Silverster Stallone",
   year: "2006",
+  image:"http://www.studiocity-macau.com/uploads/images/SC/Entertainment/Batman/batman_share.jpg",
   website: "www.google.com"
 })
 
-movie4.save(function(err, movie) {
+movie6.save(function(err, movie) {
  if (err) return console.log(err);
  console.log("Movie saved! ", movie);
 })
 
-var movie4 = new Movie({
+var movie7 = new Movie({
   title: "Scarface",
   description: "The Lexi Cinema is a digital arthouse cinema, offering world cinema, mainstream films and retrospectives. All profits from the cinema support a sustainable living project in South Africa.",
   actors: "Nicolas Cage, Martin Scorzese, Silverster Stallone",
   year: "2006",
+  image:"http://www.studiocity-macau.com/uploads/images/SC/Entertainment/Batman/batman_share.jpg",
   website: "www.google.com"
 })
 
-movie4.save(function(err, movie) {
+movie7.save(function(err, movie) {
  if (err) return console.log(err);
  console.log("Movie saved! ", movie);
 })
 
-var movie4 = new Movie({
+var movie8 = new Movie({
   title: "Scarface",
   description: "The Lexi Cinema is a digital arthouse cinema, offering world cinema, mainstream films and retrospectives. All profits from the cinema support a sustainable living project in South Africa.",
   actors: "Nicolas Cage, Martin Scorzese, Silverster Stallone",
   year: "2006",
+  image:"http://www.studiocity-macau.com/uploads/images/SC/Entertainment/Batman/batman_share.jpg",
   website: "www.google.com"
 })
 
-movie4.save(function(err, movie) {
+movie8.save(function(err, movie) {
  if (err) return console.log(err);
  console.log("Movie saved! ", movie);
 })
 
-var movie4 = new Movie({
+var movie9 = new Movie({
   title: "Scarface",
   description: "The Lexi Cinema is a digital arthouse cinema, offering world cinema, mainstream films and retrospectives. All profits from the cinema support a sustainable living project in South Africa.",
   actors: "Nicolas Cage, Martin Scorzese, Silverster Stallone",
   year: "2006",
+  image:"http://www.studiocity-macau.com/uploads/images/SC/Entertainment/Batman/batman_share.jpg",
   website: "www.google.com"
 })
 
-movie4.save(function(err, movie) {
+movie9.save(function(err, movie) {
  if (err) return console.log(err);
  console.log("Movie saved! ", movie);
 })
 
-var movie4 = new Movie({
+var movie10 = new Movie({
   title: "Scarface",
   description: "The Lexi Cinema is a digital arthouse cinema, offering world cinema, mainstream films and retrospectives. All profits from the cinema support a sustainable living project in South Africa.",
   actors: "Nicolas Cage, Martin Scorzese, Silverster Stallone",
   year: "2006",
+  image:"http://www.studiocity-macau.com/uploads/images/SC/Entertainment/Batman/batman_share.jpg",
   website: "www.google.com"
 })
 
-movie4.save(function(err, movie) {
+movie10.save(function(err, movie) {
  if (err) return console.log(err);
  console.log("Movie saved! ", movie);
 })

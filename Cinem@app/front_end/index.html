@@ -112,7 +112,7 @@
             <p>{{ movie.description }}</p>
             <p>{{ movie.actor }}</p>
             <p>{{ movie.year }}</p>
-            <p>{{ movie.image }}</p>
+            <img ng-src='{{movie.image}}'>
             <a href='{{movie.website}}'>Website</a> | <a ng-click="movies.removeMovie(movie)" href="#">Delete</a>
         </div> 
     </div>
