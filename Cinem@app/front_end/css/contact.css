@@ -154,3 +154,8 @@ header nav ul li a {
 #nameContact {
   margin-left: 288px;
 }
+
+#icon {
+  width: 25px;
+  height: 25px;
+}
