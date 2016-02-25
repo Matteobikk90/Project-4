@@ -15,6 +15,7 @@ mongoose.connect(databaseURL);
 var routes         = require('./config/routes');
 
 // Setup Middleware
+app.use(express.static('public'));
 app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
