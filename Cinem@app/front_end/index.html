@@ -111,9 +111,9 @@
 
         <div class='movie-tile col-md-12' ng-repeat="movie in cinemas.cinema.movies">
           <h2>{{ movie.title }}</h2>
-          <p>{{ movie.description }}</p>
-          <p>{{ movie.actor }}</p>
-          <p>{{ movie.year }}</p>
+          <p class="pSize">{{ movie.description }}</p>
+          <p class="pSize">{{ movie.actor }}</p>
+          <p class="pSize">{{ movie.year }}</p>
           <img ng-src='{{movie.image}}'>
           <br>
           <a id="website" href='{{movie.website}}'>Website</a>
