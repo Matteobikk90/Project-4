@@ -124,7 +124,20 @@ header nav ul li a {
 }
 
 .cinema-tile {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.66);
+  height: 530px;
+  width: 290px;
+  float: left;
+  padding: 10px;
+  margin: 0 15px 15px 0; 
+  float: inherit;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.cinema-tile-add {
+  background-color: rgba(255, 255, 255, 0.66);
   width: 290px;
   float: left;
   padding: 10px;
@@ -151,7 +164,7 @@ header nav ul li a {
 }
 
 .movie-tile {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.66);
   padding: 10px;
   margin-bottom: 15px;
 }

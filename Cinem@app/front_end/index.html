@@ -17,13 +17,13 @@
   <script src="./js/controllers/moviesController.js"></script>
 </head>
 
-  <div class="header-videoContainer">
+<!--   <div class="header-videoContainer">
      <div class="video-container">
         <video preload="true" autoplay="autoplay" volume="0">
            <source src="video/video.mp4" type="video/mp4">
         </video>
      </div>
-  </div>
+  </div> -->
 
 <body ng-controller="CinemasController as cinemas">
   <header>
@@ -79,9 +79,9 @@
 
     <div id="cinemas">
 
-      <div ng-click="cinemas.toggleNewForm()" class="cinema-tile">
+      <div ng-click="cinemas.toggleNewForm()" class="cinema-tile-add">
         <h3><a href="#">Add Cinema</a></h3>
-        <img id="icon" src="../images/cinema.png">
+        <!-- <img id="icon" src="../images/cinema.png"> -->
       </div>
 
       <div class="container-fluid">
@@ -92,7 +92,7 @@
             <p>{{ cinema.address }}</p>
             <p>{{ cinema.phone }}</p>
             <img ng-src='{{cinema.image}}'>
-            <p>{{ cinema.description | limitTo: cinemas.descripLimit }}<span ng-if="cinema.description.length >= cinemas.descripLimit">...</span></p>
+            <p>{{ cinema.description }}<!-- | limitTo: cinemas.descripLimit }}<span ng-if="cinema.description.length >= cinemas.descripLimit">...</span> --></p>
             <a id="website" href='{{cinema.website}}'>Website</a>
             <br>
             <a ng-click="cinemas.showCinema(cinema);" href='#'>Show</a> | <a ng-click="cinemas.editCinema(cinema)" href='#' class='edit'>Edit</a> | <a ng-click="cinemas.removeCinema(cinema)" class='delete' href='#'>Delete</a>
@@ -106,7 +106,7 @@
 
       <div ng-click="movies.toggleAddMovie()" class='movie-tile'>
         <h3><a href='#'>Add a Movie</a></h3>
-        <img id="icon" src="../images/film.png">
+        <!-- <img id="icon" src="../images/film.png"> -->
       </div>
 
         <div class='movie-tile col-md-12' ng-repeat="movie in cinemas.cinema.movies">
