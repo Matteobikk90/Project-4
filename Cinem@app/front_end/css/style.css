@@ -1,13 +1,14 @@
 body {
   font-family: 'Lobster', cursive;
   background-image: url("../images/cinema.jpg");
+  background-color: black;
   background-size: contain;
   background-position: center;
 }
 
 main {
-  width: 960px;
-  margin: 30px auto;
+  /*width: 960px;*/
+  /*margin: 30px auto;*/
 }
 
 html {
@@ -80,10 +81,10 @@ a:hover {
 header {
   width: 100%;
   background: white;
-  border-bottom: 1px solid #EDEEEE;
+  /*border-bottom: 1px solid #EDEEEE;*/
 }
 
-header nav {
+/*header nav {
   max-width: 960px;
   margin: 0 auto;
   height: 60px;
@@ -122,23 +123,23 @@ header nav ul li a:hover {
 header nav ul li a {
   text-decoration: none;
   color: black;
-}
+}*/
 
 #cinemas {
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .cinema-tile {
   background-color: rgba(255, 255, 255, 0.66);
   height: 562px;
-  width: 290px;
-  float: left;
-  padding: 10px;
-  margin: 0 15px 15px 0; 
-  float: inherit;
+  /*width: 290px;*/
+  /*float: left;*/
+  padding: 1em;
+  margin: 1em auto; 
+  /*float: inherit;*/
   text-align: center;
-  margin: auto;
-  margin-bottom: 10px;
+  /*margin: auto;*/
+  /*margin-bottom: 10px;*/
 }
 
 .cinema-tile-add {
@@ -164,7 +165,7 @@ header nav ul li a {
 
 #movies {
   display: none;
-  overflow: hidden;
+  /*overflow: hidden;*/
   padding-left: 15px;
 }
 

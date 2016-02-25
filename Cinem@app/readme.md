@@ -1,8 +1,5 @@
-#                                   #
+#####################################    
 #          PSEUDOCODE               #
-#                                   #
-#                                   #
-#                                   #
 #                                   #
 #  - BACK END NODE - (NODEJS)       #
 #                                   #
@@ -22,10 +19,35 @@
 #                                   #
 #####################################
 
-Cinem@pp ------------------------------>>>>>
+#####################################
+#           TECH USED               #
+#                                   #
+#  - HTML5                          #
+#                                   #
+#  - CSS3                           #
+#                                   #
+#  - BOOTSTRAP                      #
+#                                   #
+#  - JAVASCRIPT / JQUERY            #
+#                                   #
+#  - NODEJS                         #
+#                                   #
+#  - ANGULARJS                      #
+#                                   #
+#  - HEROKU                         #
+#                                   #
+#  - MONGODB                        #
+#                                   #
+#  - GITHUB                         #
+#                                   #
+#  - MVC                            #
+#                                   #
+#####################################
+
+Cinem@pp ------------------------------>>>>>   
 
 
-Cinemas and Movies database where everyone can create/recommend their favourite ones, uploading photos, location, phone, website, a description and more.
+Cinemas and Movies database where everyone can create/recommend their favourite ones, uploading photos,adding location, phone, website link, a description and more.
 
 
 ################################################################################

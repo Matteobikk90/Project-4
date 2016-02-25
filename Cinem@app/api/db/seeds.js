@@ -79,10 +79,10 @@ movie5.save(function(err, movie) {
 var movie6 = new Movie({
   title: "Mr. & Mrs. Smith",
   description: "This is the movie where Brad Pitt & Angelina Jolie met. Watching their onscreen chemistry, it’s easy to see how they’ve lasted so long. No matter how many times this movie is on TV, it’s hard not to watch. Filled with shootouts, explosions, comedy, romance, and flat out sex appeal, Mr. & Mrs. Smith is a spy film with something for everyone. It doesn’t make you think; it just invites you to sit, stare, and smile.",
-  actor: "",
+  actor: "Brad Pitt, Angelina Jolie, Vince Vaughn, Kerry Washington",
   year: "2005",
   image:"http://cdn-media-2.lifehack.org/wp-content/files/2013/05/Mr-and-Mrs-Smith-Best-Movie-380x175.jpg",
-  website: ""
+  website: "https://en.wikipedia.org/wiki/Mr._%26_Mrs._Smith_(2005_film)"
 })
 
 movie6.save(function(err, movie) {
@@ -93,10 +93,10 @@ movie6.save(function(err, movie) {
 var movie7 = new Movie({
   title: "Back to the Future",
   description: "Back to the Future is a time travel movie packed with memorable characters. Biff (Thomas Wilson) is a quintessential bully with some of the best quotable lines in cinematic history. Doc Brown (Christopher Lloyd) inspired a generation of kids to become scientists. What makes the movie so great, though, is that protagonist Marty McFly (Michael J Fox) is just a normal kid in a crazy situation, and he overcomes. If he can overcome, anyone can.",
-  actor: "  Brad Pitt, Angelina Jolie, Vince Vaughn, Kerry Washington",
+  actor: "Neil Canton, Michael J. Fox, Bob Gale, Crispin Glover",
   year: "1985",
   image:"http://cdn-media-1.lifehack.org/wp-content/files/2013/05/Back-to-the-Future-Best-Movie1-380x200.jpg",
-  website: "https://en.wikipedia.org/wiki/Mr._%26_Mrs._Smith_(2005_film)"
+  website: "http://www.backtothefuture.com/"
 })
 
 movie7.save(function(err, movie) {
@@ -308,7 +308,7 @@ var cinema2 = new Cinema({
   image: "http://i1.cdnds.net/12/42/618x415/-4.jpg",
   description: "BFI Southbank screens classic, contemporary, avant garde and traditional films from around the world and much closer to home. Visitors can also browse hundreds of hours of film and TV from the BFI (British Film Institute) National Archive, check out the drop-in studio cinema, and shop for a range of films and books at the Filmstore.",
   website: "http://www.bfi.org.uk/",
-  movies: [movie14, movie10, movie6, movie6]
+  movies: [movie14, movie10, movie6, movie7]
 })
 
 cinema2.save(function(err, cinema) {
