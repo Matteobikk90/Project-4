@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 
-var databaseURL = 'mongodb://localhost:27017/cinemapp';
-mongoose.connect(databaseURL);
+var databaseURL    = 'mongodb://localhost:27017/cinemapp';
+mongoose.connect(process.env.MONGOLAB_URI || databaseURL);
 
 var Movie = require("../models/movie"); 
 var Cinema    = require("../models/cinema");
