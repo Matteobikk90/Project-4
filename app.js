@@ -9,7 +9,7 @@ var app            = express();
 
 // Setup database
 var databaseURL    = 'mongodb://localhost:27017/cinemapp';
-mongoose.connect(databaseURL);
+mongoose.connect(process.env.MONGOLAB_URI || databaseURL);
 
 // Require routes
 var routes         = require('./config/routes');
