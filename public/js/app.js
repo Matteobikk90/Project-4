@@ -1,3 +1,3 @@
 angular
   .module('Cinem@pp', ['ngResource'])
-  .constant("API", "/");
+  .constant("API", "");
