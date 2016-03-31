@@ -22,7 +22,7 @@ function CinemasController(Cinema){
   self.toggleNewForm   = toggleNewForm;
   self.toggleShowCinemas = toggleShowCinemas;
 
-  self.descripLimit = 150;
+  // self.descripLimit = 150;
 
   function showCinema(cinema){
     $("form#new-cinema").slideUp();
